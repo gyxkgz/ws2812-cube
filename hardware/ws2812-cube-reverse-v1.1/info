@@ -1,0 +1,106 @@
+{
+  "uuid": "7cf835183ea4b9dcf34ab6d4e227f340",
+  "path": "Offline/ws2812-cube-reverse-v1.1",
+  "name": "ws2812-cube-reverse-v1.1",
+  "content": "",
+  "created_at": "2020-09-20 16:26:11",
+  "updated_at": "2020-09-20 18:07:16",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "35f11447124fd9b911dea11e3a87d4f0",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "6b4734eba1714e9a9bc44ea1445ea515": 16,
+        "a68dc5e6a9944c46b7604648a43dcd65": 4,
+        "a9166447412c45948c67b198900ab1f1": 4
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "WS2812B-B",
+          16,
+          "LED-SMD_4P-L5.0-W5.0-TL_WS2812B-B",
+          "LED13,LED1,LED3,LED4,LED5,LED6,LED7,LED8,LED9,LED10,LED11,LED12,LED2,LED14,LED15,LED16",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Worldsemi",
+            "BOM_Manufacturer Part": "WS2812B-B",
+            "BOM_Supplier Part": "C114586",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "b492c7f663c44f8ab2afd723c35ea2a4",
+            "uuid": "6b4734eba1714e9a9bc44ea1445ea515"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x3",
+          4,
+          "HDR-M-2.54_1X3",
+          "J9,J8,J5,J1",
+          {
+            "BOM_Supplier Part": "C180248",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "9f77654394344f25b3de138e0fe05ff6",
+            "uuid": "a68dc5e6a9944c46b7604648a43dcd65"
+          }
+        ],
+        [
+          "smd-2.54-3p",
+          4,
+          "SMD-2.54-3P",
+          "U8,U2,U10,U3",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "e271c3dd77564656a8828f2740cf962a",
+            "uuid": "a9166447412c45948c67b198900ab1f1"
+          }
+        ]
+      ],
+      "updateTime": 1600592124,
+      "createTime": 1596962550,
+      "histories": [],
+      "created_at": "2020-08-09 16:42:30",
+      "updated_at": "2020-09-20 16:55:24"
+    },
+    {
+      "uuid": "e39d0cc05a838ea061fa8b436ccc5ea8",
+      "title": "PCB_2020-08-09_17-24-09",
+      "filename": "PCB_2020-08-09_17-24-09.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "9f77654394344f25b3de138e0fe05ff6": 4,
+        "e271c3dd77564656a8828f2740cf962a": 4,
+        "b492c7f663c44f8ab2afd723c35ea2a4": 16
+      },
+      "BOM": [],
+      "updateTime": 1600596436,
+      "createTime": 1596965049,
+      "histories": [],
+      "created_at": "2020-08-09 17:24:09",
+      "updated_at": "2020-09-20 18:07:16"
+    }
+  ],
+  "sort": [],
+  "title": "ws2812-cube-reverse-v1.1",
+  "foldername": "ws2812-cube-reverse-v1.1",
+  "schfilename": "ws2812-cube-reverse copy.json",
+  "schfilemtime": 1600592124190
+}

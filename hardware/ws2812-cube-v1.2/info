@@ -1,0 +1,451 @@
+{
+  "uuid": "2cdc9a7924e8a485c68f5bef2d4f0735",
+  "path": "Offline/ws2812-cube-v1.2",
+  "name": "ws2812-cube-v1.2",
+  "content": "",
+  "created_at": "2020-09-27 22:15:16",
+  "updated_at": "2020-10-12 16:41:32",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "cb364f7f647028a7162298a6f1129b01",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "6b4734eba1714e9a9bc44ea1445ea515": 16,
+        "fa33d4808b42d46b96893a5da4a98304": 1,
+        "4a2c584b8bdf2028156b6341ce399fe2": 1,
+        "24eeb2ceca08480b92b847b6a310acda": 13,
+        "b0248eb51e084227889f2cb84eab79c4": 4,
+        "10ecf32b1c694c9d969f8aa42901d1f6": 1,
+        "14681c343fa04741a756bef148341bab": 1,
+        "0895a120f6c37851eded6aba2efb23da": 1,
+        "5cbe824183374fac8e4c1ae848199ce3": 1,
+        "68699de834344af08b0eadb57b79518f": 5,
+        "e96c580bed68431e81670a0111869147": 1,
+        "a9166447412c45948c67b198900ab1f1": 8,
+        "957b28c26ce845a1b53acfe12674f550": 1,
+        "a68dc5e6a9944c46b7604648a43dcd65": 8,
+        "02b1c9aa34634cb4c4d01622c3340320": 1,
+        "8b8f2c4b0f1a4c05b9bf99dce6e3b5cc": 1,
+        "3d8347f87a8143c9b0d5a22ad275b752": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "16MHz",
+          1,
+          "OSC-SMD_4P-L3.2-W2.5-BL",
+          "X3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EPSON",
+            "BOM_Manufacturer Part": "X1E0000210375000G",
+            "BOM_Supplier Part": "C89379",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "3665faf5c7824047877c19fd71b91289",
+            "uuid": "02b1c9aa34634cb4c4d01622c3340320"
+          }
+        ],
+        [
+          "CJA1117B-3.3",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR",
+          "U11",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CJ",
+            "BOM_Manufacturer Part": "CJA1117B-3.3",
+            "BOM_Supplier Part": "C24253",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "8d5c9191afac4835a6971bb1719d64f9",
+            "uuid": "3d8347f87a8143c9b0d5a22ad275b752"
+          }
+        ],
+        [
+          "3x6x2.5mm",
+          1,
+          "KEY-3.0*6.0",
+          "KEY1",
+          {
+            "BOM_Supplier Part": "C5382",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "3x6x2.5mm",
+            "puuid": "fd04c2b37e3f4daf93a176ff1f28dfba",
+            "uuid": "4a2c584b8bdf2028156b6341ce399fe2"
+          }
+        ],
+        [
+          "LED-0603_R",
+          1,
+          "LED0603_RED",
+          "LED17",
+          {
+            "BOM_Manufacturer": "EVERLIGHT(台湾亿光)",
+            "BOM_Manufacturer Part": "19-217/R6C-AL1M2VY/3T",
+            "BOM_Supplier Part": "C72044",
+            "BOM_Supplier": "LCSC",
+            "puuid": "1efb3a885b5b4aecb6d41221a8f4d86b",
+            "uuid": "5cbe824183374fac8e4c1ae848199ce3"
+          }
+        ],
+        [
+          "WS2812B-B",
+          16,
+          "LED-SMD_4P-L5.0-W5.0-TL_WS2812B-B",
+          "LED14,LED8,LED9,LED10,LED11,LED12,LED13,LED4,LED15,LED16,LED1,LED3,LED5,LED6,LED7,LED2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Worldsemi",
+            "BOM_Manufacturer Part": "WS2812B-B",
+            "BOM_Supplier Part": "C114586",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "b492c7f663c44f8ab2afd723c35ea2a4",
+            "uuid": "6b4734eba1714e9a9bc44ea1445ea515"
+          }
+        ],
+        [
+          "CH340C",
+          1,
+          "SOP-16_L10.0-W3.9-P1.27-LS6.0-BL",
+          "U5",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "WCH",
+            "BOM_Manufacturer Part": "CH340C",
+            "BOM_Supplier Part": "C84681",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "5b77c8f94739414cb5c7ee7837fc6959",
+            "uuid": "8b8f2c4b0f1a4c05b9bf99dce6e3b5cc"
+          }
+        ],
+        [
+          "CON_HEADER_PRG_AVR_ICSP",
+          1,
+          "M2X3_SMD",
+          "J2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "14dca4686913446ebbfb3bc0dd905432",
+            "uuid": "10ecf32b1c694c9d969f8aa42901d1f6"
+          }
+        ],
+        [
+          "12pf",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "104",
+          1,
+          "C0603",
+          "C7",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "0.1u",
+          4,
+          "C0603",
+          "C8,C11,C9,C3",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "10nf",
+          1,
+          "C0603",
+          "C10",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "22uf",
+          1,
+          "C0603",
+          "C5",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "10uf",
+          1,
+          "C0603",
+          "C4",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "0.47uf",
+          1,
+          "C0603",
+          "C13",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "4.7uf",
+          1,
+          "C0603",
+          "C6",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "2.2uf",
+          1,
+          "C0603",
+          "C12",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "f187d3c25f9f43a29b67d3cfa364ee78",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "MBR0520",
+          1,
+          "SOD-123_L2.8-W1.8-LS3.7-RD",
+          "D1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "MBR0520",
+            "BOM_Manufacturer": "CJ",
+            "BOM_Supplier Part": "C77335",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "8d946c7f61b247e5a163a1477fd9299f",
+            "uuid": "0895a120f6c37851eded6aba2efb23da"
+          }
+        ],
+        [
+          "ICM-20608g",
+          1,
+          "LGA-16_L3.0-W3.0-P0.50-BL",
+          "U17",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C97633",
+            "BOM_Manufacturer": "TDK InvenSense",
+            "BOM_Manufacturer Part": "ICM-20602",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "d3ac1d69f7e94da293488b80b8dfc443",
+            "uuid": "957b28c26ce845a1b53acfe12674f550"
+          }
+        ],
+        [
+          "MICRO-USB-SMD-TYPE-AB-R-A(ST-USB-001L)",
+          1,
+          "MICRO-USB5+2P-SMD-0.65",
+          "USB1",
+          {
+            "BOM_Manufacturer Part": "?",
+            "puuid": "1492ec97f4844d7f94af743ec8bf229e",
+            "uuid": "14681c343fa04741a756bef148341bab"
+          }
+        ],
+        [
+          "VUSB",
+          2,
+          "PAD-100X55-RRECT",
+          "U12,U35",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "05331431a1ad4ad68e66fb879ff279ad",
+            "uuid": "68699de834344af08b0eadb57b79518f"
+          }
+        ],
+        [
+          "GND",
+          2,
+          "PAD-100X55-RRECT",
+          "U34,U33",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "05331431a1ad4ad68e66fb879ff279ad",
+            "uuid": "68699de834344af08b0eadb57b79518f"
+          }
+        ],
+        [
+          "VCCIN",
+          1,
+          "PAD-100X55-RRECT",
+          "U32",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "05331431a1ad4ad68e66fb879ff279ad",
+            "uuid": "68699de834344af08b0eadb57b79518f"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x3",
+          8,
+          "HDR-M-2.54_1X3",
+          "J9,J1,J3,J4,J5,J8,J7,J6",
+          {
+            "BOM_Supplier Part": "C180248",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "9f77654394344f25b3de138e0fe05ff6",
+            "uuid": "a68dc5e6a9944c46b7604648a43dcd65"
+          }
+        ],
+        [
+          "smd-2.54-3p",
+          8,
+          "SMD-2.54-3P",
+          "U3,U10,U9,U6,U7,U8,U4,U2",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "e271c3dd77564656a8828f2740cf962a",
+            "uuid": "a9166447412c45948c67b198900ab1f1"
+          }
+        ],
+        [
+          "1k",
+          4,
+          "R0603",
+          "R3,R4,R2,R1",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "1bf59dff03ec4233aa077dc7cf0e92a1",
+            "uuid": "b0248eb51e084227889f2cb84eab79c4"
+          }
+        ],
+        [
+          "TA-3525-A1",
+          1,
+          "SW-SMD_3P-L9.1-W3.5-P2.50-EH6.8",
+          "SW1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C514018",
+            "BOM_Manufacturer": "Yuandi",
+            "BOM_Manufacturer Part": "TA-3525-A1",
+            "puuid": "c66aa76f47b1445eaba96655c3bc87e4",
+            "uuid": "e96c580bed68431e81670a0111869147"
+          }
+        ],
+        [
+          "ATMEGA328P-AU",
+          1,
+          "TQFP-32_L7.0-W7.0-P0.80-LS9.0-BL",
+          "U1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "MICROCHIP",
+            "BOM_Manufacturer Part": "ATMEGA328P-AU",
+            "BOM_Supplier Part": "C14877",
+            "BOM_LCSC Assembly": "Yes",
+            "puuid": "9c6dab9dc91e4b929269cb3454d6d713",
+            "uuid": "fa33d4808b42d46b96893a5da4a98304"
+          }
+        ]
+      ],
+      "updateTime": 1602490312,
+      "createTime": 1601216117,
+      "histories": [],
+      "created_at": "2020-09-27 22:15:17",
+      "updated_at": "2020-10-12 16:11:52"
+    },
+    {
+      "uuid": "052a7fc2ddca92fe15373086f2997bac",
+      "title": "PCB_2020-08-09_17-24-10",
+      "filename": "PCB_2020-08-09_17-24-10.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "05331431a1ad4ad68e66fb879ff279ad": 5,
+        "f187d3c25f9f43a29b67d3cfa364ee78": 13,
+        "3665faf5c7824047877c19fd71b91289": 1,
+        "5b77c8f94739414cb5c7ee7837fc6959": 1,
+        "9f77654394344f25b3de138e0fe05ff6": 8,
+        "e271c3dd77564656a8828f2740cf962a": 8,
+        "fd04c2b37e3f4daf93a176ff1f28dfba": 1,
+        "1efb3a885b5b4aecb6d41221a8f4d86b": 1,
+        "14dca4686913446ebbfb3bc0dd905432": 1,
+        "8d946c7f61b247e5a163a1477fd9299f": 1,
+        "1492ec97f4844d7f94af743ec8bf229e": 1,
+        "1bf59dff03ec4233aa077dc7cf0e92a1": 4,
+        "c66aa76f47b1445eaba96655c3bc87e4": 1,
+        "9c6dab9dc91e4b929269cb3454d6d713": 1,
+        "d3ac1d69f7e94da293488b80b8dfc443": 1,
+        "8d5c9191afac4835a6971bb1719d64f9": 1,
+        "b492c7f663c44f8ab2afd723c35ea2a4": 16
+      },
+      "BOM": [],
+      "updateTime": 1602492092,
+      "createTime": 1602489948,
+      "histories": [],
+      "created_at": "2020-10-12 16:05:48",
+      "updated_at": "2020-10-12 16:41:32"
+    }
+  ],
+  "sort": [],
+  "title": "ws2812-cube-v1.2",
+  "foldername": "ws2812-cube-v1.2",
+  "schfilename": "ws2812-cube-v1.2.json",
+  "schfilemtime": 1602490312044
+}
