@@ -8,7 +8,7 @@ https://www.bilibili.com/video/BV1ev411k7mh/
 
 **2、Software: Arduino**
 
-Before build,you need install lib "Adafruit_NeoPixel" and "Adafruit_BUSIO".
+Before build,you need install lib "Adafruit_NeoPixel" and "Adafruit_BusIO".
 
 **3、Hardware: lceda(立创eda)**
 
