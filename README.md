@@ -6,7 +6,7 @@ A DIY WS2812 CUBE
 
 https://www.bilibili.com/video/BV1ev411k7mh/
 
-**2、Software: Arduino**
+**2、Software: Arduino，VSCode+PlatformIO**
 
 Before build,you need install lib "Adafruit_NeoPixel" and "Adafruit_BusIO".
 

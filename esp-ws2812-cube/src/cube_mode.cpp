@@ -13,7 +13,7 @@ uint32_t random_color[6];
 
 
 //led mode
-void CUBE_MODE::cube_led_switch_RGB()
+void CUBE_MODE::led_switch_RGB()
 {
     for(int i=0; i<NUMPIXELS; i++) { 
         setPixelColor(i, COLOR(0, 0, 50));
@@ -34,7 +34,7 @@ void CUBE_MODE::cube_led_switch_RGB()
     delay_ms(DEFAULT_DELAY_VAL); // Pause before next pass through loop
 }
 
-void CUBE_MODE::cube_breathe_led_all(int wait){
+void CUBE_MODE::breathe_led_all(int wait){
 
      uint32_t rand_color=Wheel(random(0,255));
 
@@ -57,7 +57,7 @@ void CUBE_MODE::cube_breathe_led_all(int wait){
     }
    // setBrightness(BRIGHTLESS);  
  }
-void CUBE_MODE::cube_breathe_led_single(int pixel,uint32_t color,int wait)
+void CUBE_MODE::breathe_led_single(int pixel,uint32_t color,int wait)
 {
    for(int i=0; i<BRIGHTLESS; i++) { // For each pixel in .. 
     
@@ -76,7 +76,7 @@ void CUBE_MODE::cube_breathe_led_single(int pixel,uint32_t color,int wait)
   //  setBrightness(BRIGHTLESS);  
 }
 
-void CUBE_MODE::cube_rainbow(uint8_t wait) {
+void CUBE_MODE::rainbow(uint8_t wait) {
   uint16_t i, j;
   setBrightness(BRIGHTLESS);
   for(j=0; j<256; j++) {
@@ -91,7 +91,7 @@ void CUBE_MODE::cube_rainbow(uint8_t wait) {
  }
 }
 
-void CUBE_MODE::cube_rainbowCycle(uint8_t wait) {
+void CUBE_MODE::rainbowCycle(uint8_t wait) {
   uint16_t i, j;
   setBrightness(BRIGHTLESS);
   for(j=0; j<256*5; j++) { // 5 cycles of all colors on wheel
@@ -105,7 +105,7 @@ void CUBE_MODE::cube_rainbowCycle(uint8_t wait) {
       }
   }
 }
-void CUBE_MODE::cube_theaterChase(uint32_t c, uint8_t wait) {
+void CUBE_MODE::theaterChase(uint32_t c, uint8_t wait) {
   for (int j=0; j<20; j++) {  //do 10 cycles of chasing
     for (int q=0; q < 3; q++) {
       for (uint16_t i=0; i < numPixels(); i=i+3) {
@@ -122,7 +122,7 @@ void CUBE_MODE::cube_theaterChase(uint32_t c, uint8_t wait) {
   }
 }
 
-void CUBE_MODE::cube_one_face_one_color_fixed()
+void CUBE_MODE::one_face_one_color_fixed()
 {
   for(int j=0;j<6;j++){
     for(int i=0; i<16; i++) { 
@@ -133,7 +133,7 @@ void CUBE_MODE::cube_one_face_one_color_fixed()
   delay_ms(1000);
 }
 
-void CUBE_MODE::cube_one_face_one_color_random()
+void CUBE_MODE::one_face_one_color_random()
 {  
   for(int i=0;i<6;i++)
   {
@@ -149,7 +149,7 @@ void CUBE_MODE::cube_one_face_one_color_random()
   delay_ms(1000);
 }
 
-void CUBE_MODE::cube_rectangle_random(){
+void CUBE_MODE::rectangle_random(){
    clear();
   for(int i=0;i<6;i++)
   {
@@ -172,7 +172,7 @@ void CUBE_MODE::cube_rectangle_random(){
    delay_ms(1000);
 }
 
-void CUBE_MODE::cube_rectangle_color_flow(int wait){
+void CUBE_MODE::rectangle_color_flow(int wait){
   int i;
      clear();
     for(int j=0; j<256*5; j++) { // 5 cycles of all colors on wheel
@@ -197,7 +197,7 @@ void CUBE_MODE::cube_rectangle_color_flow(int wait){
 }
 
 #define COLOR_STEP 8
-void CUBE_MODE::cube_face_color_flow(int wait){
+void CUBE_MODE::face_color_flow(int wait){
   int i;
   
     for(int j=0; j<256; j++) { // 5 cycles of all colors on wheel
@@ -225,7 +225,7 @@ void CUBE_MODE::cube_face_color_flow(int wait){
     }
 }
 
-void CUBE_MODE::cube_all_color_gradual_change(int wait){
+void CUBE_MODE::all_color_gradual_change(int wait){
     uint16_t i, j;
   setBrightness(BRIGHTLESS);
   for(j=0; j<256; j++) {
@@ -240,7 +240,7 @@ void CUBE_MODE::cube_all_color_gradual_change(int wait){
  }
 }
 
-void CUBE_MODE::cube_one_by_one_circle(int wait){
+void CUBE_MODE::one_by_one_circle(int wait){
         for(int i=0; i< 5; i++) {
            for(int n=0;n<6;n++){
             setPixelColor(i+n*16,color_array[n]);
@@ -290,7 +290,7 @@ void CUBE_MODE::cube_one_by_one_circle(int wait){
             return; 
            }
   }
-void CUBE_MODE::cube_arrow(){
+void CUBE_MODE::arrow(){
    clear();
   for(int i=0;i<6;i++)
   {
@@ -337,7 +337,7 @@ void CUBE_MODE::cube_arrow(){
    
   
  }
-void CUBE_MODE::cube_question_mark(){
+void CUBE_MODE::question_mark(){
    clear();
    randNumber = random(0, 6);
    for(int j=0;j<6;j++){
@@ -358,60 +358,60 @@ void CUBE_MODE::cube_question_mark(){
    delay_ms(1000);
   
   }
-void CUBE_MODE::cube_do_all_mode()
+void CUBE_MODE::do_all_mode()
 {
-    cube_led_switch_RGB();   //1
+    led_switch_RGB();   //1
     if(mode_changed)
       return;
     for(int i=0;i<6;i++){
-      cube_breathe_led_all(11);    //2
+      breathe_led_all(11);    //2
       if(mode_changed)
         return;
     }
     
-    cube_rainbow(20);        //3
+    rainbow(20);        //3
     if(mode_changed)
       return;
       
     for(int i=0;i<6;i++){         //4
-      cube_theaterChase(color_array[i],50);
+      theaterChase(color_array[i],50);
       if(mode_changed)
          return;
     }
     
     for(int i=0;i<6;i++){       //5
-     cube_one_face_one_color_random();
+     one_face_one_color_random();
     if(mode_changed)
       return;
     }
     
-    cube_rainbowCycle(15);       //6
+    rainbowCycle(15);       //6
    if(mode_changed)
       return;
    
    for(int i=0;i<6;i++){ 
-    cube_rectangle_random();   //7
+    rectangle_random();   //7
     if(mode_changed)
       return;
    }
      
    
 
-    cube_rectangle_color_flow(10); //8
+    rectangle_color_flow(10); //8
     if(mode_changed)
       return;
     
    for(int i=0;i<6;i++){ 
-      cube_arrow();        //9
+      arrow();        //9
     if(mode_changed)
       return;
    }
     
-    cube_all_color_gradual_change(20);   //10
+    all_color_gradual_change(20);   //10
      if(mode_changed)
       return;
    for(int i=0;i<6;i++){ 
-     cube_question_mark();        //11
+     question_mark();        //11
    }
 
     //......
@@ -548,7 +548,7 @@ void CUBE_MODE::music_mode0(uint16_t peakToPeak)
       setBrightness(100);
        lastc=c;}
 
-void CUBE_MODE::cube_music_mode(int mode)
+void CUBE_MODE::music_mode(int mode)
 {
     unsigned long startMillis= millis();
     uint16_t peakToPeak = 0; // peak-to-peak level
@@ -618,7 +618,7 @@ uint32_t CUBE_MODE::Wheel(byte WheelPos) {
 */
 extern void do_without_delay();
 
-bool CUBE_MODE::delay_ms(uint16_t ms,bool mode_changed) 
+bool CUBE_MODE::delay_ms(uint16_t ms) 
 {
     long time1;
     if(mode_changed)
@@ -641,3 +641,178 @@ bool CUBE_MODE::delay_ms(uint16_t ms,bool mode_changed)
     return true;
 }
 
+void CUBE_MODE::cube_get_acc_mode(int16_t ax,int16_t ay,int16_t az)
+{
+    //face
+    if(ax>FACE_CHANGE_THRSHLD){
+        
+        if(mode!=1)
+        {
+          mode=1;
+          mode_changed=1;
+        }
+      }
+      else if(ay>FACE_CHANGE_THRSHLD)
+      {
+        if(mode!=2)
+        {
+          mode=2;
+          mode_changed=1;
+        }
+      }
+      else if(az>FACE_CHANGE_THRSHLD)
+      {
+        if(mode!=3)
+        {
+          mode=3;
+          mode_changed=1;
+        }
+      }
+       else if(ax<-FACE_CHANGE_THRSHLD)
+      {
+        if(mode!=4)
+        {
+          mode=4;
+          mode_changed=1;
+        }
+      }
+      else if(ay<-FACE_CHANGE_THRSHLD)
+      {
+        if(mode!=5)
+        {
+          mode=5;
+          mode_changed=1;
+        }
+      }
+      else if(az<-FACE_CHANGE_THRSHLD)
+      {
+        if(mode!=0)
+        {
+          mode=0;
+          mode_changed=1;
+        }
+      }
+    //point
+    if(ax>POINT_CHANGE_THRSHLD&&ay>POINT_CHANGE_THRSHLD&&az>POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=6)
+      {
+        mode=6;
+        mode_changed=1;
+      }
+    } 
+    else if(ax>POINT_CHANGE_THRSHLD&&ay>POINT_CHANGE_THRSHLD&&az<-POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=7)
+      {
+        mode=7;
+        mode_changed=1;
+      }
+    } 
+     else if(ax>POINT_CHANGE_THRSHLD&&ay<-POINT_CHANGE_THRSHLD&&az>POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=8)
+      {
+        mode=8;
+        mode_changed=1;
+      }
+    } 
+     else if(ax>POINT_CHANGE_THRSHLD&&ay<-POINT_CHANGE_THRSHLD&&az<-POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=9)
+      {
+        mode=9;
+        mode_changed=1;
+      }
+    } 
+     else if(ax<-POINT_CHANGE_THRSHLD&&ay>POINT_CHANGE_THRSHLD&&az>POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=10)
+      {
+        mode=10;
+        mode_changed=1;
+      }
+    } 
+     else if(ax<-POINT_CHANGE_THRSHLD&&ay>POINT_CHANGE_THRSHLD&&az<-POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=11)
+      {
+        mode=11;
+        mode_changed=1;
+      }
+    } 
+     else if(ax<-POINT_CHANGE_THRSHLD&&ay<-POINT_CHANGE_THRSHLD&&az>POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=12)
+      {
+        mode=12;
+        mode_changed=1;
+      }
+    } 
+     else if(ax<-POINT_CHANGE_THRSHLD&&ay<-POINT_CHANGE_THRSHLD&&az<-POINT_CHANGE_THRSHLD)
+    {
+      if(mode!=13)
+      {
+        mode=13;
+        mode_changed=1;
+      }
+    } 
+}
+void CUBE_MODE::mode_apply()
+{
+    mode_changed = 0;
+   switch(mode)
+    {
+        case 0:
+        // led_switch_RGB();      
+        music_mode(2);
+        break;
+        case 1:
+        breathe_led_all(10);
+    //   color_num=((color_num++)%(sizeof(color_array)/sizeof(color_array[0])));   //知道错在哪里吗？
+    //   color_num%=(sizeof(color_array)/sizeof(color_array[0]));
+        //  Serial.println(color_num);
+    //   Serial.println(sizeof(color_array)/sizeof(color_array[0]));
+        break;
+        case 2:
+        music_mode(0);
+        break;
+        case 3:
+        //
+        rainbowCycle(15);
+        break;
+        case 4:
+        theaterChase(Wheel(random(0,255)),50);
+        break;
+        case 5:
+        one_face_one_color_fixed();
+        break;
+        case 6:
+        one_face_one_color_random();
+        break;
+        case 7:
+        rectangle_random();
+        break;
+        case 8:
+        rectangle_color_flow(15);
+        break;
+        case 9:
+        face_color_flow(30);
+        break;
+        case 10:          //usb point do all mode
+        do_all_mode();
+        // music_mode(0);
+        break;
+        case 11:
+        all_color_gradual_change(50);
+        break;
+        case 12:
+        arrow();
+        break;
+        case 13:
+        question_mark();
+        break;
+        default:
+        break;
+    }
+}

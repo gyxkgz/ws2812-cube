@@ -1,9 +1,8 @@
+
 #include <Arduino.h>
-
-
-#include <Adafruit_I2CDevice.h>
-#include <SPI.h>
 #include <Adafruit_Sensor.h>
+
+#include <SPI.h>
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
@@ -14,36 +13,60 @@
 #include <FS.h>
 
 #include"cube_mode.h"
- 
-CUBE_MODE cube_mode=CUBE_MODE(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+#include<mpu6050.h>
 
-Adafruit_I2CDevice i2c_dev = Adafruit_I2CDevice(0x68);
-int led = 14;
 //wifi
 const char* ssid = "Redmi_1036"; // The SSID (name) of the Wi-Fi network you want to connect to
 const char* password = "g.13301690897"; // The password of the Wi-Fi network
 ESP8266WiFiMulti wifiMulti;
 ESP8266WebServer server(80);
+//mode
+CUBE_MODE cube_mode=CUBE_MODE(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+//mpu6050
+MPU6050 mpu6050;
+
+
+
+//function declare
 void handleRoot();
 void handleNotFound();
 void handleLED();
 bool handleFileRead(String path);
+
+void do_without_delay()
+{
+    if(mpu6050.int_triggered)
+    {
+        mpu6050.rd_clr_int();
+        mpu6050.get_acc_raw();
+        cube_mode.cube_get_acc_mode(mpu6050.acc_raw_x,
+                                    mpu6050.acc_raw_y,
+                                    mpu6050.acc_raw_z);
+    }   
+    // Serial.print("accx:");
+    // Serial.print(mpu6050.acc_raw_x);
+    // Serial.print(" accy:");
+    // Serial.print(mpu6050.acc_raw_y);
+    // Serial.print(" accz:");
+    // Serial.println(mpu6050.acc_raw_z);
+}
+
+ICACHE_RAM_ATTR void mpu6050_int_cb(){
+    mpu6050.int_triggered=true;
+}
 void setup() {
     // put your setup code here, to run once:
-    // pinMode(led,OUTPUT);
-    // pinMode(PIN,OUTPUT);
-    //  pinMode(4,OUTPUT);
-    //  pinMode(5,OUTPUT);
-    //  pinMode(12,OUTPUT);
-    //  pinMode(13,OUTPUT);
-    //  pinMode(14,OUTPUT);
-    //  pinMode(15,OUTPUT);
-    // strip.Begin();
-    // strip.Show();
     
     Serial.begin(115200);
-   // cube_mode.begin();
+    
     cube_mode.begin();
+
+    if(!mpu6050.begin())
+        Serial.println("mpu6050 init failed");
+    mpu6050.cycle_mode(true,MPU6050_CYCLE_20_HZ);
+    mpu6050.enable_int(true);
+    attachInterrupt(digitalPinToInterrupt(D5), mpu6050_int_cb, RISING);
+
     Serial.println('\n');
     //WiFi.begin(ssid, password);
    // wifiMulti.addAP(ssid, password);
@@ -75,58 +98,14 @@ void setup() {
     // Serial.print("Connecting to ");
     // Serial.print(ssid); Serial.println(" ...");
 
-    Serial.println("I2C address detection test");
-
-    if (!i2c_dev.begin()) {
-        Serial.print("Did not find device at 0x");
-        Serial.println(i2c_dev.address(), HEX);
-        while (1);
-    }
-    Serial.print("Device found on address 0x");
-    Serial.println(i2c_dev.address(), HEX);
 }
 
 void loop() {
+    // put your main code here, to run repeatedly:
     cube_mode.clear();
-   // server.handleClient();
-    //cube_mode.cube_breathe_led_all(10);
-    cube_mode.cube_do_all_mode();
-    // digitalWrite(2,!digitalRead(2));
-    //  digitalWrite(4,!digitalRead(4));
-    //   digitalWrite(5,!digitalRead(5));
-    //    digitalWrite(12,!digitalRead(12));
-    //     digitalWrite(13,!digitalRead(13));
-    //  digitalWrite(14,!digitalRead(14));
-    //   digitalWrite(15,!digitalRead(15));
-    //   delay(500);
-  // put your main code here, to run repeatedly:
-  // digitalWrite(ledpin,HIGH);
-  // delay(1000);
-  // digitalWrite(ledpin,LOW);
-  // delay(1000);
-  
-   Serial.println("hhh\n");
-//   for(int i=0;i<8;i++)
-//   {
-//        cube_mode.setPixelColor(i,cube_mode.Color(0, 150, 0));
-//   }
-//   cube_mode.show();
-//   delay(1000);
-   
-//    Serial.println("red\n");
-//   for(int i=0;i<8;i++)
-//   {
-//       cube_mode.setPixelColor(i,COLOR(150, 0, 0));
-//   }
-//   cube_mode.show();
-//   delay(1000);  
-//   Serial.println("blue\n");
-//   for(int i=0;i<8;i++)
-//   {
-//        cube_mode.setPixelColor(i,COLOR(0, 0, 150));
-//   }
-//   cube_mode.show();
-//   delay(1000);
+    cube_mode.mode_apply();
+    do_without_delay();
+    // server.handleClient();
 
 }
 
@@ -142,11 +121,7 @@ String getContentType(String filename) { // convert the file extension to the MI
 void handleRoot() {
     server.send(200, "text/html", "<form action=\"/LED\" method=\"POST\"><input type=\"submit\"value=\"Toggle LED\"></form>");
 }
-void handleLED(){
-    digitalWrite(led,!digitalRead(led));
-    server.sendHeader("Location","/");
-    server.send(303);
-}
+
 void handleNotFound(){
     server.send(404, "text/plain", "404: Not found");
 }
@@ -164,5 +139,4 @@ bool handleFileRead(String path) { // send the right file to the client (if it e
     Serial.println("\tFile Not Found");
     return false; // If the file doesn't exist, return false
 }
-void do_without_delay()
-{}
+
