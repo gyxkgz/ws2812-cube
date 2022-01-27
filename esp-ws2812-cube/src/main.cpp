@@ -17,7 +17,7 @@
 
 //wifi
 const char* ssid = "Redmi_1036"; // The SSID (name) of the Wi-Fi network you want to connect to
-const char* password = "g.13301690897"; // The password of the Wi-Fi network
+const char* password = "xxxxxxxx"; // The password of the Wi-Fi network
 ESP8266WiFiMulti wifiMulti;
 ESP8266WebServer server(80);
 //mode
